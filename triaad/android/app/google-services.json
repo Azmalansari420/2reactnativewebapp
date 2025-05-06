@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "547894368058",
+    "project_id": "triaad-6496f",
+    "storage_bucket": "triaad-6496f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547894368058:android:9bd7b75ae6a5adbd762203",
+        "android_client_info": {
+          "package_name": "com.triaad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC491EIxgHQnONSbTJ3rx0ioaCcmUV7hPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
