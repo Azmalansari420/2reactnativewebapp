@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "394603967684",
+    "project_id": "bunzz-946e5",
+    "storage_bucket": "bunzz-946e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394603967684:android:260f891b0dfc2b9a304591",
+        "android_client_info": {
+          "package_name": "com.bunzz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRNcep5ky0jbIcB7rXBFtRr9rIzu658zM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
