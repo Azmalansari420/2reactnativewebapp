@@ -9,6 +9,7 @@ const App = () => {
   const webviewRef = useRef<WebView | null>(null);
   const [canGoBack, setCanGoBack] = useState(false);
   const [deviceId, setDeviceId] = useState<string>('');
+  const [tokenFinal, settoken] = useState<string>('');
 
   useEffect(() => {
     const requestNotificationPermission = async () => {
@@ -41,6 +42,7 @@ const App = () => {
       try {
         const token = await messaging().getToken();
         console.log('FCM Token:', token);
+        settoken(token);
 
         await messaging().subscribeToTopic('allnoti2');
         console.log('Subscribed to topic: allnoti2');
@@ -85,15 +87,16 @@ const App = () => {
   }, [canGoBack]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: 'black' }}>
       {deviceId ? (
         <WebView
           ref={webviewRef}
-          source={{ uri: `https://triaad.com/app/user/splashscreen.php?device_id=${deviceId}` }}
+          source={{ uri: `https://triaad.com/app/user/splashscreen.php?device_id=${deviceId}&token=${tokenFinal}` }}
           onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
+          style={{ backgroundColor: 'black' }} // Optional: also apply to WebView
         />
       ) : (
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color="#ffffff" />
       )}
     </View>
   );
