@@ -224,6 +224,138 @@ const Mystyle = StyleSheet.create(
         //   }
 
 
+        // bootom menu
+
+         bottomsection: {
+    margin: 10,
+  },
+  bottomsectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  bottomsectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  bottomseeAll: {
+    color: '#28a745',
+    fontWeight: '600',
+  },
+ bottomgrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  bottomcard: {
+    width: '48%',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    padding: 10,
+    backgroundColor: '#fff',
+    marginBottom: 12,
+    position: 'relative',
+  },
+  bottomdiscountBadge: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    backgroundColor: '#28a745',
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderRadius: 4,
+    zIndex: 1,
+  },
+  bottomdiscountText: {
+    color: '#fff',
+    fontSize: 11,
+    fontWeight: 'bold',
+  },
+  bottomimage: {
+    height: 70,
+    width: '100%',
+    marginTop: 25,
+  },
+  bottomname: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#333',
+    marginVertical: 6,
+  },
+  bottompriceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bottomprice: {
+    fontSize: 16,
+    color: 'green',
+    fontWeight: 'bold',
+    marginRight: 8,
+  },
+  bottomoriginalPrice: {
+    fontSize: 14,
+    color: '#888',
+    textDecorationLine: 'line-through',
+  },
+  bottomrow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  bottomvariantBox: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 6,
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+  },
+  bottomvariantText: {
+    fontSize: 13,
+    color: '#333',
+  },
+  bottomaddBtn: {
+    backgroundColor: 'green',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 6,
+  },
+  bottomaddBtnText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 13,
+  },
+
+  bottomweightRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginTop: 8,
+  },
+  bottomweightChip: {
+    backgroundColor: '#f0f0f0',
+    borderRadius: 5,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+  },
+  bottomweightChipText: {
+    fontSize: 12,
+    color: '#333',
+  },
+
+  bottompickerWrapper: {
+    backgroundColor: '#f0f0f0',
+    borderRadius: 8,
+    marginTop: 8,
+    marginBottom: 8,
+  },
+
+  bottompicker: {
+    height: 40,
+    width: '100%',
+  },
+
 
 
 

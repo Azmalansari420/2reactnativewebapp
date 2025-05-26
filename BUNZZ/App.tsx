@@ -9,6 +9,7 @@ import React, { useRef, useState, useEffect } from 'react';
         const webviewRef = useRef<WebView | null>(null);
         const [canGoBack, setCanGoBack] = useState(false);
         const [deviceId, setDeviceId] = useState<string>('');
+        const [firebaseToken, setFirebaseToken] = useState<string | null>(null);
         const [showSplash, setShowSplash] = useState(true);
 
         useEffect(() => {
@@ -44,6 +45,7 @@ import React, { useRef, useState, useEffect } from 'react';
           const initializeMessaging = async () => {
             try {
               const token = await messaging().getToken();
+              setFirebaseToken(token);
               console.log('FCM Token:', token);
 
               await messaging().subscribeToTopic('allnoti2');
@@ -95,6 +97,8 @@ import React, { useRef, useState, useEffect } from 'react';
           };
         }, [canGoBack]);
 
+        
+
         return (
           <View style={{ flex: 1 }}>
             {showSplash ? (
@@ -102,7 +106,7 @@ import React, { useRef, useState, useEffect } from 'react';
             ) : deviceId ? (
               <WebView
                 ref={webviewRef}
-                source={{ uri: `https://bunzz.in/app/user/login.php?device_id=${deviceId}` }}
+                source={{ uri: `https://bunzz.in/app/user/login.php?device_id=${deviceId}&firebase_token=${firebaseToken}` }}
                 onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
               />
             ) : (

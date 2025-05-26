@@ -3,7 +3,7 @@ import { View, Text, TextInput, Image, ScrollView, StyleSheet, TouchableOpacity 
 import Icon from 'react-native-vector-icons/Ionicons';
 import Mystyle from '../css/Mystyle';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={Mystyle.container}>
       {/* Header */}
@@ -109,6 +109,63 @@ const HomeScreen = () => {
           </View>
 
         </View>
+
+          {/* //bottom product */}
+
+          <View style={Mystyle.bottomgrid}>
+          {[
+            {
+              name: 'kissan Jam - Mixed Fruit',
+              image: require('../../assets/images/aarpar_energy_booster-1.png'),
+              price: 80,
+              originalPrice: 100,
+              weight: '500g',
+              discount: '20%',
+            },
+            {
+              name: ' Mantra Capsules',
+              image: {uri: 'https://www.shivveda.com/cdn/shop/files/DSC00042.image-jpg.jpg?v=1747478841&width=600',},
+              price: 999,
+              originalPrice: 2210,
+              weight: '800g',
+              discount: '10%',
+            },
+          ].map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              style={Mystyle.bottomcard}
+              onPress={() => navigation.navigate('Productdetails', { product: item })}
+            >
+              <View style={Mystyle.bottomdiscountBadge}>
+                <Text style={Mystyle.bottomdiscountText}>{item.discount} OFF</Text>
+              </View>
+
+              <Image source={item.image} style={Mystyle.bottomimage} resizeMode="contain" />
+
+              <Text style={Mystyle.bottomname} numberOfLines={2}>{item.name}</Text>
+
+              <View style={Mystyle.bottompriceRow}>
+                <Text style={Mystyle.bottomprice}>₹{item.price}.00</Text>
+                <Text style={Mystyle.bottomoriginalPrice}>₹{item.originalPrice}.00</Text>
+              </View>
+
+              <View style={Mystyle.bottomrow}>
+                <View style={Mystyle.bottomvariantBox}>
+                  <Text style={Mystyle.bottomvariantText}>{item.weight} ▼</Text>
+                </View>
+                <TouchableOpacity style={Mystyle.bottomaddBtn}>
+                  <Text style={Mystyle.bottomaddBtnText}>+ ADD</Text>
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+
+
+
+
+
       </ScrollView>
 
       {/* Bottom Nav */}
