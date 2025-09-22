@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "539613006126",
+    "firebase_url": "https://tirangacab-a4242-default-rtdb.firebaseio.com",
+    "project_id": "tirangacab-a4242",
+    "storage_bucket": "tirangacab-a4242.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539613006126:android:fc6f469e4a12090a1452bf",
+        "android_client_info": {
+          "package_name": "com.triangacab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBenitCd7BVXnMdS4PDxfN7GH1KeN8-EcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
