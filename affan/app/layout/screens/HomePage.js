@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
 import styles from "../../assets/css/myAppStyle"; // Import global style
-import Header from "../components/Header";
+import Header from "../components/HeaderWithSidebar";
 import BottomNav from "../components/BottomNav";
 
 const { width } = Dimensions.get("window");
@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
       {/* Fixed Header */}
-      <Header title="AFFAN" onMenuPress={() => alert("Menu pressed")} />
+      <Header title="AFFAN" />
 
       {/* Scrollable Content */}
       <ScrollView style={{ flex: 1 }}>

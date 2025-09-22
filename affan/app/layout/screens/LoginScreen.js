@@ -25,9 +25,13 @@ export default function LoginScreen({ navigation }) {
         <Icon name="eye" size={20} color="#888" />
       </View>
 
-      <TouchableOpacity style={styles.signInBtn} onPress={() => navigation.navigate("HomePage")}>
-        <Text style={styles.signInText}>Sign In</Text>
-      </TouchableOpacity>
+      <TouchableOpacity
+  style={styles.signInBtn}
+  onPress={() => navigation.replace("Drawer")}
+>
+  <Text style={styles.signInText}>Sign In</Text>
+</TouchableOpacity>
+
 
       <TouchableOpacity style={styles.forgetpassworddiv} onPress={() => navigation.navigate("ForgetPassword")}>
         <Text style={styles.forgetpasswordbtn}>Forgot Password?</Text>

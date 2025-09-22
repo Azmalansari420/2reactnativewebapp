@@ -15,6 +15,7 @@
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-device-info": "^14.0.4",
+    "react-native-safe-area-context": "^5.6.1",
     "react-native-webview": "^13.13.5"
   },
   "devDependencies": {

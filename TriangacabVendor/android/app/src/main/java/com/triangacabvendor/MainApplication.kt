@@ -9,6 +9,7 @@ import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
+import com.google.firebase.FirebaseApp   // ✅ Added for Firebase
 
 class MainApplication : Application(), ReactApplication {
 
@@ -16,7 +17,7 @@ class MainApplication : Application(), ReactApplication {
       object : DefaultReactNativeHost(this) {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
-              // Packages that cannot be autolinked yet can be added manually here, for example:
+              // Packages that cannot be autolinked yet can be added manually here
               // add(MyReactNativePackage())
             }
 
@@ -33,6 +34,11 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+
+    // ✅ Initialize React Native
     loadReactNative(this)
+
+    // ✅ Initialize Firebase (needed for FCM to work in Android 13/14)
+    FirebaseApp.initializeApp(this)
   }
 }
