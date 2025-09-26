@@ -196,8 +196,32 @@ const stopBookingSound = () => {
     };
   }, [canGoBack]);
 
+
+const postFirebaseToken = async () => {
+  try {
+    const formData = new FormData();
+    formData.append("device_id", deviceId);
+    formData.append("token", firebaseToken);
+    
+ 
+    const response = await fetch("https://tirangacab.com/api/auth/checkdeviceid", {
+      method: "POST",
+      body: formData,
+    }); 
+
+    const text = await response.text(); // kyunki CI response JSON nahi bhej raha
+    console.log("✅ API Response:", text);
+  } catch (error) {
+    console.error("❌ API Error:", error);
+  }
+};
+
+useEffect(() => {
+postFirebaseToken();
+}, [firebaseToken, deviceId]);
+
   return (
-    <SafeAreaView style={{ flex: 1, paddingTop: 1 + insets.top, paddingBottom: 1 + insets.bottom  }}>
+    <SafeAreaView style={{ flex: 1, paddingTop: insets.top, paddingBottom:insets.bottom  }}>
       <View style={{ flex: 1 }}>
         {showSplash ? (
           <WebView source={{ uri: "file:///android_asset/splash.html" }} />

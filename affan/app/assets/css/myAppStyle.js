@@ -235,7 +235,218 @@ statValue: {
   color: "#0057ff",
 },
 
+// profile
 
+// Profile Page styles
+profileContainer: {
+  flex: 1,
+  backgroundColor: "#f5f5f5",
+  padding: 15,
+},
+
+profileCard: {
+  backgroundColor: "#fff",
+  borderRadius: 12,
+  padding: 15,
+  shadowColor: "#000",
+  shadowOpacity: 0.08,
+  shadowRadius: 4,
+  elevation: 3,
+},
+
+profileHeader: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginBottom: 15,
+},
+
+avatar: {
+  width: 50,
+  height: 50,
+  borderRadius: 25,
+  backgroundColor: "#100dd1",
+  justifyContent: "center",
+  alignItems: "center",
+  marginRight: 12,
+},
+
+avatarText: {
+  fontSize: 20,
+  fontWeight: "bold",
+  color: "#fff",
+},
+
+profileName: {
+  fontSize: 18,
+  fontWeight: "bold",
+  color: "#222",
+},
+
+profileRole: {
+  fontSize: 14,
+  color: "gray",
+},
+
+profileDetails: {
+  marginTop: 10,
+},
+
+row: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  paddingVertical: 6,
+  borderBottomWidth: 1,
+  borderBottomColor: "#eee",
+},
+
+label: {
+  fontSize: 14,
+  fontWeight: "600",
+  color: "#444",
+},
+
+value: {
+  fontSize: 14,
+  color: "#222",
+  textAlign: "right",
+  flexShrink: 1,
+},
+
+updateBtn: {
+  marginTop: 20,
+  backgroundColor: "#100dd1",
+  paddingVertical: 12,
+  borderRadius: 8,
+  alignItems: "center",
+},
+
+updateBtnText: {
+  fontSize: 16,
+  fontWeight: "bold",
+  color: "#fff",
+},
+
+
+attendanceCard: {
+  backgroundColor: "#fff",
+  padding: 15,
+  borderRadius: 12,
+  marginBottom: 15,
+  shadowColor: "#000",
+  shadowOpacity: 0.05,
+  shadowRadius: 4,
+  elevation: 3,
+},
+
+attendanceHeader: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginBottom: 10,
+},
+
+attendanceDetails: {
+  marginTop: 5,
+},
+
+detailText: {
+  fontSize: 14,
+  color: "#444",
+  marginBottom: 4,
+},
+
+lateText: {
+  fontSize: 14,
+  color: "red",
+  fontWeight: "600",
+},
+
+presentText: {
+  fontSize: 14,
+  color: "green",
+  fontWeight: "600",
+},
+
+
+
+
+chatCard: {
+  backgroundColor: "#fff",
+  paddingVertical: 12,
+  paddingHorizontal: 10,
+  borderRadius: 12,
+  marginBottom: 12,
+  shadowColor: "#000",
+  shadowOpacity: 0.05,
+  shadowRadius: 3,
+  elevation: 2,
+},
+
+chatHeader: {
+  flexDirection: "row",
+  alignItems: "center",
+},
+
+lastMessage: {
+  fontSize: 13,
+  color: "gray",
+  marginTop: 2,
+},
+
+chatTime: {
+  fontSize: 12,
+  color: "gray",
+},
+
+unreadBadge: {
+  marginTop: 4,
+  backgroundColor: "#100dd1",
+  borderRadius: 10,
+  paddingHorizontal: 6,
+  paddingVertical: 2,
+},
+
+unreadText: {
+  fontSize: 12,
+  color: "#fff",
+  fontWeight: "bold",
+},
+
+
+
+profileImage: {
+  width: 60,
+  height: 60,
+  borderRadius: 30,
+  marginRight: 15,
+},
+
+settingsContainer: {
+  marginTop: 20,
+  backgroundColor: "#fff",
+  borderRadius: 12,
+  paddingVertical: 5,
+  marginHorizontal: 15,
+  shadowColor: "#000",
+  shadowOpacity: 0.05,
+  shadowRadius: 4,
+  elevation: 2,
+},
+
+settingsItem: {
+  flexDirection: "row",
+  alignItems: "center",
+  paddingVertical: 15,
+  paddingHorizontal: 20,
+  borderBottomWidth: 1,
+  borderBottomColor: "#eee",
+},
+
+settingsText: {
+  fontSize: 15,
+  marginLeft: 15,
+  color: "#333",
+},
 
 
 

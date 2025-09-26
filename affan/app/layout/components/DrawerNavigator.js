@@ -8,11 +8,10 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="HomePage" screenOptions={{ headerShown: false }}>
+    <Drawer.Navigator screenOptions={{ headerShown: false }}>
       <Drawer.Screen name="HomePage" component={HomePage} />
       <Drawer.Screen name="Register" component={Register} />
       <Drawer.Screen name="ChangePassword" component={ChangePassword} />
     </Drawer.Navigator>
   );
 }
-

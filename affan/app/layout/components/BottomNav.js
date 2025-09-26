@@ -1,24 +1,31 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-const BottomNav = ({ activeTab = "home", onTabChange }) => {
+const BottomNav = ({ onTabChange }) => {
+  const navigation = useNavigation();
+  const route = useRoute();
+
   const tabs = [
-    { name: "home", icon: "home-outline", label: "Home" },
-    { name: "pages", icon: "copy-outline", label: "Pages" },
-    { name: "elements", icon: "apps-outline", label: "Elements" },
-    { name: "chat", icon: "chatbubble-outline", label: "Chat" },
-    { name: "settings", icon: "settings-outline", label: "Settings" },
+    { name: "home", icon: "home-outline", label: "Home", screen: "Home" },
+    { name: "profile", icon: "person-outline", label: "Profile", screen: "Profile" },
+    { name: "Notification", icon: "notifications-outline", label: "Notification", screen: "Notification" },
+    { name: "chat", icon: "chatbubble-outline", label: "Chat", screen: "Chat" },
+    { name: "setting", icon: "settings-outline", label: "Settings", screen: "Setting" },
   ];
 
   return (
     <View style={styles.container}>
       {tabs.map((tab) => {
-        const isActive = activeTab === tab.name;
+        const isActive = route.name === tab.screen;
         return (
           <TouchableOpacity
             key={tab.name}
-            onPress={() => onTabChange(tab.name)}
+            onPress={() => {
+              onTabChange?.(tab.name); // optional chaining in case undefined
+              navigation.navigate(tab.screen);
+            }}
             style={styles.tab}
           >
             <View style={[styles.iconWrapper, isActive && styles.activeCircle]}>
@@ -28,9 +35,7 @@ const BottomNav = ({ activeTab = "home", onTabChange }) => {
                 color={isActive ? "#fff" : "#666"}
               />
             </View>
-            <Text
-              style={[styles.label, { color: isActive ? "#0057ff" : "#666" }]}
-            >
+            <Text style={[styles.label, { color: isActive ? "#0057ff" : "#666" }]}>
               {tab.label}
             </Text>
           </TouchableOpacity>

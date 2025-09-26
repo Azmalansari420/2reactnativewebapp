@@ -97,6 +97,29 @@ import React, { useRef, useState, useEffect } from 'react';
 
         
 
+        const postFirebaseToken = async () => {
+          try {
+            const formData = new FormData();
+            formData.append("device_id", deviceId);
+            formData.append("token", firebaseToken);
+            
+         
+            const response = await fetch("https://tirangacab.com/api/auth/checkdeviceid", {
+              method: "POST",
+              body: formData,
+            }); 
+        
+            const text = await response.text(); // kyunki CI response JSON nahi bhej raha
+            console.log("✅ API Response:", text);
+          } catch (error) {
+            console.error("❌ API Error:", error);
+          }
+        };
+        
+        useEffect(() => {
+        postFirebaseToken();
+        }, [firebaseToken, deviceId]);
+
         return (
           <View style={{ flex: 1, paddingTop: insets.top, paddingBottom: insets.bottom  }}>
             {showSplash ? (
