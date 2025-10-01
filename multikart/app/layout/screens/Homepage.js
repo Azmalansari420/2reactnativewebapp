@@ -88,21 +88,25 @@ const Homepage = ({ navigation }) => {
 
       {/* Product Cards */}
       {products.map((product) => (
-        <View key={product.id} style={styles.productCard}>
+        <TouchableOpacity
+            key={product.id}
+            style={styles.productCard}
+            onPress={() => navigation.navigate("ProductDetail")} // <-- Pass product data if needed
+          >
             <Image source={product.image} style={styles.productImage} />
             <View style={styles.productInfo}>
-            <Text style={styles.productTitle}>{product.title}</Text>
-            <Text style={styles.productBrand}>by {product.brand}</Text>
-            <View style={styles.priceRow}>
-                <Text style={styles.priceNew}>{product.priceNew}</Text>
-                <Text style={styles.priceOld}>{product.priceOld}</Text>
-                <Text style={styles.priceOff}>{product.discount}</Text>
-            </View>
+                <Text style={styles.productTitle}>{product.title}</Text>
+                <Text style={styles.productBrand}>by {product.brand}</Text>
+                <View style={styles.priceRow}>
+                    <Text style={styles.priceNew}>{product.priceNew}</Text>
+                    <Text style={styles.priceOld}>{product.priceOld}</Text>
+                    <Text style={styles.priceOff}>{product.discount}</Text>
+                </View>
             </View>
             <TouchableOpacity style={styles.wishlistBtn}>
             <Text>♡</Text>
             </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
         ))}
 
         {/* sale section */}

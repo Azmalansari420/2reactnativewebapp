@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
 
 
 const { width } = Dimensions.get("window");
@@ -15,6 +16,7 @@ const productsData = [
 ];
 
 const KidsCornerSection = () => {
+   const navigation = useNavigation();
   const [wishlist, setWishlist] = useState({});
 
   const toggleWishlist = (id) => {
@@ -22,7 +24,11 @@ const KidsCornerSection = () => {
   };
 
   const renderItem = ({ item }) => (
-    <View style={styles.productBox}>
+    <TouchableOpacity
+                    
+                    style={styles.productBox}
+                    onPress={() => navigation.navigate("ProductDetail")} // <-- Pass product data if needed
+                  >
       <View style={styles.imgPart}>
         <Image source={item.image} style={styles.productImage} />
         <TouchableOpacity style={styles.wishlistBtn} onPress={() => toggleWishlist(item.id)}>
@@ -42,7 +48,7 @@ const KidsCornerSection = () => {
           <Text style={styles.discount}>{item.discount}%</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   return (

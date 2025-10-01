@@ -1,49 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const BottomNav = () => {
   const navigation = useNavigation();
-  const [activeTab, setActiveTab] = useState("Home");
+  const route = useRoute(); // get current route name
 
   const tabs = [
-    { name: "Home", icon: "home-outline", iconActive: "home" },
-    { name: "Category", icon: "shape-outline", iconActive: "shape" },
-    { name: "Cart", icon: "cart-outline", iconActive: "cart" },
-    { name: "Wishlist", icon: "heart-outline", iconActive: "heart" },
-    { name: "Profile", icon: "account-outline", iconActive: "account" },
+    { label: "Home", screen: "Homepage", icon: "home-outline", iconActive: "home" },
+    { label: "Category", screen: "Category", icon: "shape-outline", iconActive: "shape" },
+    { label: "Cart", screen: "Cart", icon: "cart-outline", iconActive: "cart" },
+    { label: "Wishlist", screen: "Wishlist", icon: "heart-outline", iconActive: "heart" },
+    { label: "Profile", screen: "Profile", icon: "account-outline", iconActive: "account" },
   ];
 
+
   const handlePress = (tab) => {
-    setActiveTab(tab.name);
-    // Navigate to the corresponding screen
-    navigation.navigate(tab.name);
+    navigation.navigate(tab.screen);
   };
 
   return (
     <View style={styles.container}>
-      {tabs.map((tab) => (
-        <TouchableOpacity
-          key={tab.name}
-          style={styles.navItem}
-          onPress={() => handlePress(tab)}
-        >
-          <MaterialCommunityIcons
-            name={activeTab === tab.name ? tab.iconActive : tab.icon}
-            size={26}
-            color={activeTab === tab.name ? "#FF4D4D" : "#555"}
-          />
-          <Text
-            style={[
-              styles.navText,
-              { color: activeTab === tab.name ? "#FF4D4D" : "#555" },
-            ]}
+      {tabs.map((tab) => {
+        const isActive = route.name === tab.screen; // check active tab using screen name
+        return (
+          <TouchableOpacity
+            key={tab.screen}
+            style={styles.navItem}
+            onPress={() => handlePress(tab)}
           >
-            {tab.name.toLowerCase()}
-          </Text>
-        </TouchableOpacity>
-      ))}
+            <MaterialCommunityIcons
+              name={isActive ? tab.iconActive : tab.icon}
+              size={26}
+              color={isActive ? "#FF4D4D" : "#555"}
+            />
+            <Text
+              style={[
+                styles.navText,
+                { color: isActive ? "#FF4D4D" : "#555" },
+              ]}
+            >
+              {tab.label.toLowerCase()}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
     </View>
   );
 };

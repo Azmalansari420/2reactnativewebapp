@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, FlatList, StyleSheet, Dimensions, ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons"; // make sure you have react-native-vector-icons installed
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
@@ -36,6 +37,7 @@ const productsData = {
 };
 
 const FindYourStyleSection = () => {
+   const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState("Trending Now");
   const [wishlist, setWishlist] = useState({}); // to track liked products
 
@@ -44,7 +46,12 @@ const FindYourStyleSection = () => {
   };
 
   const renderProduct = ({ item }) => (
-    <View style={styles.productBox}>
+    <TouchableOpacity
+                
+                style={styles.productBox}
+                onPress={() => navigation.navigate("ProductDetail")} // <-- Pass product data if needed
+              >
+  
       <Image source={item.image} style={styles.productImage} />
 
       {/* Wishlist Button */}
@@ -64,7 +71,7 @@ const FindYourStyleSection = () => {
         ${item.price} <Text style={styles.oldPrice}>${item.oldPrice}</Text>{" "}
         <Text style={styles.discount}>{item.discount}%</Text>
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
