@@ -108,7 +108,7 @@ const App = () => {
         <WebView
           ref={webviewRef}
           // source={{ uri: `http://192.168.1.19/mumbaitazapp/app/user/?device_id=${deviceId}` }}
-          source={{ uri: `https://tirangacab.com/mumbaitaj/app/user/?device_id=${deviceId}` }}
+          source={{ uri: `https://digitalnamo.com/azmal/2025/september/mumbaitaj/app/user/?device_id=${deviceId}` }}
           onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
           onMessage={onWebMessage}
         />
